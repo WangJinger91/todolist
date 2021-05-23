@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Footer from './components/Footer/idnex';
+import Footer from './components/Footer';
 import Header from './components/Header';
 import Lists from './components/Lists';
 
@@ -19,10 +19,13 @@ class App extends React.Component {
 
   selectAll=(flag)=>{
     const {todos}=this.state;
-    for(let todo of todos){
-      todo.done=flag
-    }
-    this.setState({todos:todos})
+    // for(let todo of todos){
+    //   todo.done=flag
+    // }
+    const todolist=todos.map((todo)=>{
+      return {...todo,done:flag}
+    })
+    this.setState({todos:todolist})
   }
 
   handleItem=(id,done)=>{
@@ -53,7 +56,7 @@ class App extends React.Component {
   render(){
     const {todos}=this.state;
     return (
-      <div>
+      <div className="appcontainer">
         <Header addtodo={this.addTodo}></Header>
         <Lists todos={todos} handleItem={this.handleItem} deleteItem={this.deleteItem}></Lists>
         <Footer todos={todos} selectall={this.selectAll} deleteChecked={this.deleteChecked}></Footer>

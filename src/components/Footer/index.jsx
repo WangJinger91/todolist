@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './index.css'
 
 export default class Footer extends Component {
 
@@ -46,15 +47,16 @@ export default class Footer extends Component {
 
     render() {
         const {mouse}=this.state;
-        const count=this.finieshd(this.props.todos)
+        const count=this.finieshd(this.props.todos);
+        const total=this.props.todos.length;
         return (
-            <li style={{backgroundColor:mouse?'#ddd':'white'}} onMouseEnter={this.handleMouse(true)} onMouseLeave={this.handleMouse(false)}>
+            <div className="divclass" style={{backgroundColor:mouse?'#ddd':'white'}} onMouseEnter={this.handleMouse(true)} onMouseLeave={this.handleMouse(false)}>
                 <label>
-                    <input type="checkbox" onChange={this.editChecked}></input>
-                    <span>已完成{count}/全部{this.props.todos.length}</span>
-                    <button onClick={this.deleteChecked} style={{display:mouse?'block':'none'}}>删除所有已完成</button>
+                    <input type="checkbox" checked={count===total&&count!==0} onChange={this.editChecked}></input>
+                    <span>已完成{count}/全部{total}</span>
                 </label>
-            </li>
+                <button className="footerbutton" onClick={this.deleteChecked} style={{display:mouse?'block':'none'}}>删除所有已完成</button>
+            </div>
         )
     }
 }

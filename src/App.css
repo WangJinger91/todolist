@@ -28,6 +28,18 @@
   color: #61dafb;
 }
 
+
+
+.appcontainer{
+  /* height: 300px; */
+  width: 350px;
+  border-radius: 10px;
+  left:50%;
+  margin: auto;
+  border: 3px solid #ddd;
+  margin-top: 50px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -1,0 +1,20 @@
+.buttonclass{
+    background-color: red;
+    border-radius: 5px;
+    /* width: 100px;*/
+    /* height: 40px;  */
+}
+.liclass{
+    width: 300px;
+    height: 50px;
+    background-color: sandybrown;
+    border-radius: 5px;
+    margin-left: 20px;
+    border: 3px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+
+}
+.iteminput{
+    margin-top: 12px;
+}

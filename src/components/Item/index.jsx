@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from'prop-types'
+import './index.css'
 
 export default class Item extends Component {
 
@@ -39,13 +40,13 @@ export default class Item extends Component {
         const {name,id,done}=this.props;
         const {mouse}=this.state;
         return (
-            <li style={{backgroundColor:mouse?'#ddd':'white'}} onMouseEnter={this.handleMouse(true)} onMouseLeave={this.handleMouse(false)}>
-                <label>
-                    <input type="checkbox" value={name} checked={done} onChange={this.handleChecked(id)}/>
+            <div className="liclass" style={{backgroundColor:mouse?'#ddd':'white'}} onMouseEnter={this.handleMouse(true)} onMouseLeave={this.handleMouse(false)}>
+                <label className="iteminput">
+                    <input  type="checkbox" value={name} checked={done} onChange={this.handleChecked(id)}/>
                     <span>{name}</span>
                 </label>
-                <button onClick={this.delete(id)} style={{display:mouse?'block':'none'}}>删除</button>
-            </li>
+                <button className="buttonclass" onClick={this.delete(id)} style={{display:mouse?'block':'none'}}>删除</button>
+            </div>
         )
     }
 }

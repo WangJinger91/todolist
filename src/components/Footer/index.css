@@ -1,0 +1,13 @@
+.divclass{
+    width: 310px;
+    margin-left: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.footerbutton{
+    background-color: crimson;
+    height: 30px;
+    border-radius: 5px;
+}
